@@ -11,6 +11,7 @@ import static java.lang.Math.floor;
 /**
  *
  * @author Lucio Guechi
+ * Date: 03/11/2014
  */
 public class ArrayRotator {
 
