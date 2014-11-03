@@ -57,7 +57,7 @@ public class ArrayRotator {
             startIndex = position;
         } else if ((position < 0) && (position >= -arraySource.length)) {
             startIndex = arraySource.length + position;
-             System.out.println("si" + position);
+             
         }
 
         //Copy First Items of the Rotated Array  
