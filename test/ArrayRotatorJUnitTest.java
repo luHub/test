@@ -37,8 +37,9 @@ public class ArrayRotatorJUnitTest {
     }
 
     // The methods must be annotated with annotation @Test. 
+    // 
      @Test
-     public void testRotateArrayOne() { 
+     public void testRotateArrayPositiveInBounds() { 
         
         ArrayRotator arrayRotator = new ArrayRotator();
 
@@ -50,7 +51,7 @@ public class ArrayRotatorJUnitTest {
 
         assertArrayEquals(expectedArray, originalArray);}
      @Test
-     public void testRotateArrayTwo() { 
+     public void testRotateArrayPositiveInBoundsTwo() { 
         
         ArrayRotator arrayRotator = new ArrayRotator();
 
@@ -60,5 +61,45 @@ public class ArrayRotatorJUnitTest {
         //Rotate Original Array Items:
         arrayRotator.arrayRot(originalArray, shiftPosition);
 
+        assertArrayEquals(expectedArray, originalArray);}
+      @Test
+     public void testRotateArrayPositiveOutOfBounds() { 
+        
+        ArrayRotator arrayRotator = new ArrayRotator();
+
+        int[] originalArray = {1,2,3,4,5,6};       
+        int[] expectedArray = {6,1,2,3,4,5};
+        int shiftPosition = 7;
+        
+        //Rotate Original Array Items:
+        arrayRotator.arrayRot(originalArray, shiftPosition);
+
+        assertArrayEquals(expectedArray, originalArray);}
+     
+     @Test
+     public void testRotateArrayNegativeInBounds() { 
+        
+        ArrayRotator arrayRotator = new ArrayRotator();
+
+        int[] originalArray = {1,2,3,4,5,6};       
+        int[] expectedArray = {2,3,4,5,6,1};
+        int shiftPosition = -1;
+        //Rotate Original Array Items:
+        arrayRotator.arrayRot(originalArray, shiftPosition);
+
+        assertArrayEquals(expectedArray, originalArray);}
+     
+    
+     @Test
+     public void testRotateArrayNegativeOutOfBounds() { 
+        
+        ArrayRotator arrayRotator = new ArrayRotator();
+
+        int[] originalArray = {1,2,3,4,5,6};       
+        int[] expectedArray = {3,4,5,6,1,2};
+        int shiftPosition = -50;
+        
+        //Rotate Original Array Items:
+        arrayRotator.arrayRot(originalArray, shiftPosition);
         assertArrayEquals(expectedArray, originalArray);}
 }
